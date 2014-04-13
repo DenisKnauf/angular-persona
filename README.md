@@ -11,11 +11,11 @@ To use angular-persona you have to:
 
 1. include in your index.html the Persona javascript library
 
-    <script src="https://login.persona.org/include.js"></script>
+    ```<script src="https://login.persona.org/include.js"></script>```
 
 2. install angular-persona with bower:
 
-    bower install angular-persona
+    ```bower install angular-persona```
 
 3. In your ```index.html```, after the persona library, include the
 angular-persona file
@@ -36,5 +36,10 @@ TODO
 
 USAGE
 -----
+
+TODO
+
+DEVELOPMENT
+-----------
 
 TODO
