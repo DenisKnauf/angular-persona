@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/matteosuppo/angular-persona",
   "devDependencies": {
-    "gulp": "^3.6.0"
+    "gulp": "^3.6.0",
+    "karma-jasmine": "^0.1.5",
+    "karma-chrome-launcher": "^0.1.3"
   }
 }
