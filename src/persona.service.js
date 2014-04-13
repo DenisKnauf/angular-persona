@@ -13,16 +13,16 @@ persona.service('Persona', function ($window){
 
   // Forward arguments to the library
   this.watch = function () {
-    $window.navigator.id.watch.apply(this,arguments);
+    $window.navigator.id.watch.apply($window.navigator.id, arguments);
   };
 
   // Forward arguments to the library
   this.request = function () {
-    $window.navigator.id.request.apply(this,arguments);
+    $window.navigator.id.request.apply($window.navigator.id, arguments);
   };
 
   // Forward arguments to the library
   this.logout = function () {
-    $window.navigator.id.logout.apply(this,arguments);
+    $window.navigator.id.logout.apply($window.navigator.id, arguments);
   };
 });
