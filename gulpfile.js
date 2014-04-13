@@ -2,7 +2,9 @@
 
 var gulp = require('gulp');
 var karma = require('gulp-karma');
-
+var concat = require('gulp-concat');
+var ngmin = require('gulp-ngmin');
+var uglify = require('gulp-uglify');
 
 /* Test files with karma */
 gulp.task('karma', function() {
@@ -21,3 +23,20 @@ gulp.task('karma', function() {
     throw err;
   });
 });
+
+/* Build a concat and minified version of the source files */
+gulp.task('build:concat', function () {
+  return gulp.src('src/*.js')
+    .pipe(concat('angular-persona.js'))
+    .pipe(gulp.dest('.'));
+});
+
+gulp.task('build:minify', function () {
+  return gulp.src('src/*.js')
+    .pipe(ngmin())
+    .pipe(uglify())
+    .pipe(concat('angular-persona.min.js'))
+    .pipe(gulp.dest('.'));
+});
+
+gulp.task('build', ['build:concat', 'build:minify']);
