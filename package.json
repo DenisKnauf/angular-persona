@@ -1,6 +1,6 @@
 {
   "name": "angular-persona",
-  "version": "v1.1",
+  "version": "v1.0.0",
   "description": "A collection of services and directives to use with Mozilla Persona",
   "repository": {
     "type": "git",
