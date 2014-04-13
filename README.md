@@ -32,8 +32,6 @@ In your module declaration you have to include the persona module
 Configuration
 -------------
 
-TODO
-
 USAGE
 -----
 

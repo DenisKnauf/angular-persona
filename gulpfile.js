@@ -9,6 +9,7 @@ gulp.task('karma', function() {
 
   return gulp.src([
     'bower_components/angular/angular.js',
+    'bower_components/angular-mocks/angular-mocks.js',
     'src/*.js',
     'tests/*.js'
   ]).pipe(karma({
