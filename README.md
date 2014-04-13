@@ -32,12 +32,55 @@ In your module declaration you have to include the persona module
 Configuration
 -------------
 
+The configuration is very similar to Vanilla Persona: https://developer.mozilla.org/en-US/Persona/Quick_setup
+
+You have to setup a login handler and a logout handler. You should do it in the
+run phase, in order to be able to use $http, if necessary.
+
+In this example we suppose you store your user in a user service (it's the sensible thing to do).
+Remember, if the user is logged out, user.email should be null.
+
+    app.run(function ($http, Persona, user) {
+      Persona.watch({
+        loggedInUser: user.email
+        onlogin: function(assertion) {
+          $http.post(
+            '/auth/login', // This is a URL on your website.
+            {assertion: assertion}
+          ).then(function () {
+            // Stuff
+            })
+        },
+        onlogout: function() {
+            // Stuff
+        })
+      });
+    });
+
 USAGE
 -----
 
-TODO
+To allow the user to login you should create a login button, and call Persona.request
+when it's clicked:
+
+    var controller = function ($scope, Persona) {
+        $scope.login = function () {
+            Persona.request();
+        }
+    }
+
+    <a ng-click="login()">Login with Persona</a>
+
 
 DEVELOPMENT
 -----------
 
-TODO
+Remember to install all dependencies:
+
+    $ npm install -g gulp  // It's like grunt but cooler
+    $ npm install -d
+    $ bower install
+
+To launch tests simply run
+
+    gulp karma
