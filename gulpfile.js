@@ -27,6 +27,7 @@ gulp.task('karma', function() {
 /* Build a concat and minified version of the source files */
 gulp.task('build:concat', function () {
   return gulp.src('src/*.js')
+    .pipe(ngmin())
     .pipe(concat('angular-persona.js'))
     .pipe(gulp.dest('.'));
 });
