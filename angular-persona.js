@@ -2,7 +2,7 @@
 
 var persona = angular.module('persona', []);
 
-persona.service('Persona', function ($window){
+persona.service('Persona', [ '$window', function ($window){
 
   if (!$window.navigator) {
     throw {
@@ -25,4 +25,4 @@ persona.service('Persona', function ($window){
   this.logout = function () {
     $window.navigator.id.logout.apply($window.navigator.id, arguments);
   };
-});
+}]);
