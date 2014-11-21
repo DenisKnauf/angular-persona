@@ -4,7 +4,7 @@ var persona = angular.module('persona', []);
 
 persona.service('Persona', function ($window){
 
-  if (!$window.navigator) {
+  if (!$window.navigator.id) {
     throw {
       name: 'LibraryRequired',
       message: 'The Persona library is required. Please include https://login.persona.org/include.js in your html'

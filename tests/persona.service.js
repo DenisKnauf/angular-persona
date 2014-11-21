@@ -6,7 +6,9 @@ describe('Service: Persona', function () {
 
   it('should throw an error if the Persona library is absent', function () {
 
-    var $window = {};
+    var $window = {
+      navigator: {}
+    };
 
     module(function ($provide) {
       $provide.value('$window', $window);
